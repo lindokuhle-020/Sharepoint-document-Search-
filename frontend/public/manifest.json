@@ -1,0 +1,25 @@
+{
+  "short_name": "HR Doc Search",
+  "name": "HR Document Search — KwaZulu-Natal Provincial Treasury",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0b5c36",
+  "background_color": "#f4f6f8"
+}

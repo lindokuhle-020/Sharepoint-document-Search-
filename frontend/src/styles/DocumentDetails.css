@@ -1,0 +1,152 @@
+.doc-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.doc-header .doc-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--navy-700);
+}
+
+.doc-header .doc-badge--pdf { background: #b3261e; }
+.doc-header .doc-badge--word { background: #1b4f91; }
+.doc-header .doc-badge--excel { background: #1e6b34; }
+.doc-header .doc-badge--presentation { background: #b25e12; }
+
+.doc-header h1 {
+  font-size: 1.6rem;
+  margin: 0 0 6px;
+}
+
+.doc-header__path {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+  margin: 0;
+}
+
+/* ── Actions ───────────────────────────────────────────────────────────── */
+.doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+/* ── Preview + metadata ────────────────────────────────────────────────── */
+.doc-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.doc-preview {
+  padding: 20px;
+}
+
+.doc-preview__frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  min-height: 420px;
+  padding: 40px 32px;
+  border: 2px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background: repeating-linear-gradient(
+    45deg,
+    #f7f9fa,
+    #f7f9fa 12px,
+    #f1f4f6 12px,
+    #f1f4f6 24px
+  );
+  color: var(--ink-mute);
+}
+
+.doc-preview__frame h2 {
+  font-size: 18px;
+  margin: 0;
+  color: var(--navy);
+}
+
+.doc-preview__frame p {
+  max-width: 420px;
+  font-size: 14.5px;
+  margin: 0;
+}
+
+.doc-meta {
+  padding: 20px 22px;
+}
+
+.doc-meta h2 {
+  font-size: 17px;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  border-bottom: 2px solid var(--green);
+}
+
+.doc-meta dl {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px 14px;
+  margin: 0 0 20px;
+  font-size: 14px;
+}
+
+.doc-meta dt {
+  color: var(--ink-mute);
+  font-weight: 600;
+}
+
+.doc-meta dd {
+  margin: 0;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+/* ── Summary + related ─────────────────────────────────────────────────── */
+.doc-summary {
+  padding: 22px 24px;
+}
+
+.doc-summary h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.doc-summary p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.related-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .doc-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-preview__frame {
+    min-height: 280px;
+  }
+}

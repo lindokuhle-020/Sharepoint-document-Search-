@@ -1,0 +1,122 @@
+.doc-card {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: 18px 20px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.doc-card:hover {
+  border-color: var(--green-500);
+  box-shadow: var(--shadow-md);
+}
+
+.doc-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #fff;
+  background: var(--navy-700);
+}
+
+.doc-badge--pdf { background: #b3261e; }
+.doc-badge--word { background: #1b4f91; }
+.doc-badge--excel { background: #1e6b34; }
+.doc-badge--presentation { background: #b25e12; }
+
+.doc-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.doc-card__title {
+  font-size: 17px;
+  margin: 0 0 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.doc-card__title a {
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.doc-card__title a:hover {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.doc-card__rank {
+  color: var(--ink-mute);
+  font-weight: 600;
+}
+
+.doc-card__path {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--green);
+  margin: 0 0 8px;
+}
+
+.doc-card__summary {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+  margin: 0 0 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.doc-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+
+.doc-card__meta li {
+  display: flex;
+  align-items: center;
+}
+
+.doc-card__meta li + li::before {
+  content: '•';
+  margin: 0 8px;
+  color: var(--border-strong);
+}
+
+.doc-card__actions {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+@media (max-width: 640px) {
+  .doc-card {
+    flex-wrap: wrap;
+  }
+
+  .doc-card__actions {
+    width: 100%;
+  }
+
+  .doc-card__actions .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,75 @@
+.signin-card {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 36px 38px;
+  border-top: 4px solid var(--green);
+}
+
+.signin-card h1 {
+  font-size: 1.7rem;
+}
+
+.signin-card__lead {
+  color: var(--ink-soft);
+  margin-bottom: 26px;
+}
+
+/* Microsoft-style sign-in button */
+.ms-signin-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 52px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--surface);
+  border: 2px solid var(--navy);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.ms-signin-btn:hover:not(:disabled) {
+  background: var(--green-50);
+}
+
+.ms-signin-btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.ms-mark {
+  display: grid;
+  grid-template-columns: 9px 9px;
+  grid-template-rows: 9px 9px;
+  gap: 2px;
+}
+
+.ms-mark span { display: block; }
+.ms-mark__red { background: #f25022; }
+.ms-mark__green { background: #7fba00; }
+.ms-mark__blue { background: #00a4ef; }
+.ms-mark__yellow { background: #ffb900; }
+
+.signin-card__help {
+  font-size: 13.5px;
+  color: var(--ink-mute);
+  margin: 18px 0 22px;
+}
+
+.signin-card__demo code {
+  font-size: 12.5px;
+  background: rgba(24, 37, 52, 0.08);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+@media (max-width: 560px) {
+  .signin-card {
+    padding: 28px 24px;
+  }
+}

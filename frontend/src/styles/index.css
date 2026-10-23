@@ -1,0 +1,324 @@
+/* ==========================================================================
+   Design tokens — KZN Treasury HR Document Search
+   Brand: KZN government green (header, footer, actions) with white accents;
+   navy for headings. Typography follows government identity guidelines:
+   clear hierarchy, high contrast, accessible sizes.
+   ========================================================================== */
+:root {
+  /* Brand green (header, footer, buttons, links) */
+  --green: #0b5c36;
+  --green-700: #08482a;
+  --green-500: #147a4a;
+  --green-100: #e6f0ea;
+  --green-50: #f2f7f4;
+
+  /* Navy — headings & strong text */
+  --navy: #182534;
+  --navy-700: #27384c;
+
+  /* Semantic */
+  --red: #b3261e;
+  --blue: #1b4f91;
+
+  /* Neutrals */
+  --ink: #1c2430;
+  --ink-soft: #4b5563;
+  --ink-mute: #6b7280;
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --border: #d5dbe2;
+  --border-strong: #aab4bf;
+
+  /* Elevation & shape */
+  --shadow-sm: 0 1px 2px rgba(17, 26, 38, 0.08);
+  --shadow-md: 0 2px 12px rgba(17, 26, 38, 0.12);
+  --radius: 6px;
+
+  --container: 1180px;
+  --font-sans: 'Libre Franklin', Arial, Helvetica, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   Reset & base
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.25;
+  color: var(--navy);
+  margin: 0 0 0.5em;
+  font-weight: 700;
+}
+
+h1 { font-size: 1.9rem; }
+h2 { font-size: 1.45rem; }
+h3 { font-size: 1.15rem; }
+h4 { font-size: 1rem; }
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: var(--green-500);
+}
+
+ul,
+ol {
+  margin: 0 0 1em;
+  padding-left: 1.3em;
+}
+
+mark {
+  background: #cde7d5;
+  color: var(--ink);
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Accessible focus (WCAG 2.4.7) — navy on light surfaces, white on green */
+:focus-visible {
+  outline: 3px solid var(--navy);
+  outline-offset: 2px;
+}
+
+.site-header :focus-visible,
+.site-footer :focus-visible {
+  outline-color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Layout helpers
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page {
+  padding: 28px 0 56px;
+}
+
+.app-main {
+  min-height: 68vh;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 1000;
+  background: var(--navy);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 12px 18px;
+  border-radius: 0 0 var(--radius) var(--radius);
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  color: #ffffff;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  min-height: 44px;
+  padding: 11px 20px;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--green-700);
+  border-color: var(--green-700);
+  color: #fff;
+}
+
+.btn-secondary {
+  background: var(--surface);
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.btn-secondary:hover {
+  background: var(--green-50);
+  color: var(--green-700);
+}
+
+.btn-sm {
+  min-height: 38px;
+  padding: 8px 14px;
+  font-size: 14px;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Form controls
+   -------------------------------------------------------------------------- */
+.input,
+.select {
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+  min-height: 44px;
+  width: 100%;
+}
+
+.input:focus,
+.select:focus {
+  border-color: var(--navy);
+}
+
+label {
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Shared page furniture
+   -------------------------------------------------------------------------- */
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header__lead {
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin: 0;
+}
+
+.section-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 36px 0 16px;
+}
+
+.section-title h2 {
+  margin: 0;
+}
+
+.notice {
+  background: var(--green-50);
+  border-left: 4px solid var(--green);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 14px 16px;
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.notice h3 {
+  font-size: 15px;
+  margin: 0 0 6px;
+  color: var(--navy);
+}
+
+.notice p:last-child {
+  margin-bottom: 0;
+}
+
+/* Loading spinner */
+.spinner {
+  width: 34px;
+  height: 34px;
+  border: 4px solid var(--border);
+  border-top-color: var(--green);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 48px auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-label {
+  text-align: center;
+  color: var(--ink-mute);
+  font-size: 14px;
+  margin: -34px 0 40px;
+}

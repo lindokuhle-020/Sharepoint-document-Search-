@@ -1,0 +1,38 @@
+.site-footer {
+  background: var(--green);
+  color: #ffffff;
+  margin-top: 56px;
+}
+
+.site-footer__inner {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 28px;
+}
+
+.site-footer__slogan {
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  color: #ffffff;
+  margin: 0 0 6px;
+}
+
+.site-footer__dept {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin: 0 0 10px;
+}
+
+.site-footer__copy {
+  font-size: 13px;
+  color: #cfe0d6;
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .site-footer__slogan {
+    font-size: 17px;
+  }
+}

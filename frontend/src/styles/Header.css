@@ -1,0 +1,339 @@
+/* Green portal header */
+.site-header {
+  background: var(--green);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-main__inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  min-height: 86px;
+}
+
+/* ── Brand (text only — the logo sits on the far right) ────────────────── */
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.brand__titles {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.brand__title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.brand__subtitle {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.02em;
+}
+
+/* ── Treasury logo — far right, white plate with radius + padding ─────── */
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  background: #ffffff;
+  padding: 8px 16px;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.28);
+  flex-shrink: 0;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.brand-logo:hover {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.32);
+  transform: translateY(-1px);
+}
+
+.brand-logo img {
+  height: 44px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+}
+
+/* ── Primary navigation ────────────────────────────────────────────────── */
+.primary-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  flex: 1;
+}
+
+.primary-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.nav-link:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-link.is-active {
+  border-bottom-color: #ffffff;
+}
+
+/* ── Sign-in button (on green) ─────────────────────────────────────────── */
+.header-signin {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: var(--green);
+}
+
+.header-signin:hover {
+  background: var(--green-100);
+  border-color: var(--green-100);
+  color: var(--green-700);
+}
+
+/* ── Account chip ──────────────────────────────────────────────────────── */
+.primary-nav__account {
+  display: flex;
+  align-items: center;
+}
+
+.account {
+  position: relative;
+}
+
+.account__chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  padding: 5px 14px 5px 6px;
+  cursor: pointer;
+}
+
+.account__chip:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.account__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.account__menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 50;
+  min-width: 240px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 14px;
+}
+
+.account__identity {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+
+.account__identity strong {
+  font-size: 14px;
+  color: var(--navy);
+}
+
+.account__demo-tag {
+  align-self: flex-start;
+  margin-top: 4px;
+  background: var(--green-100);
+  color: var(--green-700);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.account__signout {
+  width: 100%;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  border-radius: var(--radius);
+  padding: 9px 12px;
+  cursor: pointer;
+}
+
+.account__signout:hover {
+  background: var(--green-100);
+}
+
+/* ── Mobile menu toggle ────────────────────────────────────────────────── */
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: var(--radius);
+  padding: 9px 14px;
+  cursor: pointer;
+}
+
+.nav-toggle__icon {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-toggle__icon span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: #ffffff;
+}
+
+@media (max-width: 920px) {
+  .brand__title {
+    font-size: 16px;
+  }
+
+  .brand__subtitle {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .primary-nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 60;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    padding: 12px 20px 16px;
+  }
+
+  .primary-nav.is-open {
+    display: flex;
+  }
+
+  .site-header {
+    position: relative;
+  }
+
+  .header-main__inner {
+    min-height: 70px;
+    gap: 12px;
+  }
+
+  .primary-nav__list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Dark text inside the white mobile panel */
+  .primary-nav .nav-link {
+    color: var(--navy);
+    border-bottom: none;
+    border-left: 4px solid transparent;
+    padding: 12px 10px;
+  }
+
+  .primary-nav .nav-link.is-active {
+    color: var(--green);
+    border-left-color: var(--green);
+    background: var(--green-50);
+  }
+
+  .primary-nav__account {
+    padding-top: 4px;
+  }
+
+  .primary-nav .account__chip {
+    color: var(--navy);
+    border-color: var(--border-strong);
+    background: var(--surface);
+  }
+
+  .primary-nav .account__avatar {
+    background: var(--green);
+    color: #ffffff;
+  }
+
+  .primary-nav .header-signin {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .brand__titles {
+    display: none;
+  }
+
+  .brand-logo {
+    padding: 6px 10px;
+    border-radius: 8px;
+  }
+
+  .brand-logo img {
+    height: 32px;
+    max-width: 140px;
+  }
+}
